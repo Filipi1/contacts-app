@@ -1,40 +1,42 @@
-import 'package:contact/shared/personal-input.widget.dart';
+import 'package:contact/android/pages/contact.page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    TextEditingController emailController = new TextEditingController();
-    TextEditingController passwordController = new TextEditingController();
-
     return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
-          physics: ScrollPhysics(),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 5),
-            child: Container(child: Column(
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(top: 50, bottom: 70),
-                  child: Image.asset("images/logo.png"),
-                ),
-                PersonalInput(emailController, icon: Icons.email, hintText: "E-mail"),
-                SizedBox(height: 10),
-                PersonalInput(passwordController, icon: Icons.lock, hintText: "Senha", isPassword: true),
-                SizedBox(height: 30),
-                RaisedButton(
-                  onPressed: () {
-                    print(emailController.text);
-                    print(passwordController.text);
-                  },
-                  child: Text("Entrar", style: TextStyle(fontSize: 18)),
-                ),
-                SizedBox(height: 30),
-              ],
-            ),),
-          ),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        title: Text("Meus Contatos", style: TextStyle(color: Theme.of(context).brightness == Brightness.dark ? Colors.white : Theme.of(context).primaryColor)),
+        centerTitle: true,
+        leading: FlatButton(
+          onPressed: () {},
+          padding: EdgeInsets.all(0),
+          shape: RoundedRectangleBorder(),
+          child: Icon(Icons.search, color: Theme.of(context).primaryColor, size: 25),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.add),
+      ),
+      body: ListView(
+        children: <Widget>[
+          ListTile(
+            leading: Image.network("https://www.klrealty.com.au/wp-content/uploads/2018/11/user-image-.png"),
+            title: Text("Filipe Braga"),
+            subtitle: Text("(85) 99692-9766"),
+            trailing: FlatButton(
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ContactPage()));
+              },
+              padding: EdgeInsets.all(0),
+              shape: RoundedRectangleBorder(),
+              child: Icon(Icons.chat, color: Theme.of(context).primaryColor),
+            ),
+          )
+        ],
       ),
     );
   }

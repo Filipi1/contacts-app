@@ -1,3 +1,4 @@
+import 'package:contact/android/pages/auth.page.dart';
 import 'package:contact/android/pages/home.page.dart';
 import 'package:contact/android/styles.dart';
 import 'package:flutter/material.dart';

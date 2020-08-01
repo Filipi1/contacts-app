@@ -15,8 +15,6 @@ ThemeData primaryTheme() {
     cursorColor: primaryColor,
     fontFamily: "Montserrat",
     buttonTheme: ButtonThemeData(
-      minWidth: 150,
-      height: 40,
       buttonColor: primaryColor,
       textTheme: ButtonTextTheme.primary,
       shape: RoundedRectangleBorder(
