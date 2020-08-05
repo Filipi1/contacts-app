@@ -1,5 +1,5 @@
 import 'package:contact/android/pages/auth.page.dart';
-import 'package:contact/android/pages/home.page.dart';
+// import 'package:contact/android/pages/home.page.dart';
 import 'package:contact/android/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -12,7 +12,7 @@ class ContactAndroidApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: primaryTheme(),
-      home: HomePage(),
+      home: AuthPage(),
     );
   }
 }

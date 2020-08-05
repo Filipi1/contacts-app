@@ -1,3 +1,6 @@
+import 'dart:io';
+import 'package:contact/ios/styles.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
@@ -16,19 +19,26 @@ class PersonalInput extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Theme.of(context).primaryColor.withAlpha(30),
+        color: Platform.isIOS ? primaryColor.withAlpha(30) : Theme.of(context).primaryColor.withAlpha(30),
         borderRadius: BorderRadius.circular(360)
       ),
       child: Row(
         children: <Widget>[
           Padding(
             padding: const EdgeInsets.only(left: 18),
-            child: Icon(icon, color: Theme.of(context).primaryColor),
+            child: Icon(icon, color: Platform.isIOS ? primaryColor : Theme.of(context).primaryColor),
           ),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.only(left: 15, right: 25),
-              child: Container(
+              child: Platform.isIOS ? Container(
+                child: CupertinoTextField(
+                  controller: textEditingController,
+                  obscureText: isPassword,
+                  keyboardType: keyboardType,
+                  style: TextStyle(fontSize: 18, color: primaryColor),
+                ),
+              ) : Container(
                 child: TextFormField(
                   decoration: InputDecoration(
                     hintText: hintText,

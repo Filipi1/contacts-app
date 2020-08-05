@@ -1,4 +1,5 @@
 import 'package:contact/ios/pages/home.page.dart';
+import 'package:contact/ios/styles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
@@ -9,6 +10,7 @@ class ContactCupertinoApp extends StatelessWidget {
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     return CupertinoApp(
       debugShowCheckedModeBanner: false,
+      theme: primaryTheme(),
       home: HomePage(),
     );
   }
