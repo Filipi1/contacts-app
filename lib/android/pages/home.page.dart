@@ -1,3 +1,4 @@
+import 'package:contact/android/pages/contact-editor.page.dart';
 import 'package:contact/android/pages/contact.page.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +19,9 @@ class HomePage extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) => EditorContactPage()));
+        },
         child: Icon(Icons.add),
       ),
       body: ListView(

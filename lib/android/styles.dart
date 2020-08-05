@@ -13,9 +13,11 @@ ThemeData primaryTheme() {
     textSelectionColor: primaryColor.withAlpha(60),
     textSelectionHandleColor: primaryColor,
     cursorColor: primaryColor,
+    splashColor: primaryColor,
     fontFamily: "Montserrat",
     buttonTheme: ButtonThemeData(
       buttonColor: primaryColor,
+      splashColor: primaryColor,
       textTheme: ButtonTextTheme.primary,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(360)
